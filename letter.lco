@@ -1,0 +1,49 @@
+\ProvidesFile{brief.lco}[%
+  2002/07/09 v0.9a LaTeX2e unsupported letter-class-option]
+
+\KOMAoptions{pagenumber=false,
+  parskip=half,
+  fromalign=right,
+  fromemail=true,
+  fromurl=true,
+  fromlogo=false,
+  fromphone=true,
+  fromrule=false}
+
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{lipsum}
+\usepackage{color}
+\definecolor{mygray}{gray}{.1}
+\renewcommand{\sfdefault}{phv}
+
+\setkomavar{fromname}{John Doe}
+\setkomavar{fromaddress}{123 Main St\\Anytown 2233}
+\setkomavar{fromphone}{+64 123 456 789}
+\setkomavar{fromemail}{test@example.com}
+\setkomavar{fromurl}{http://www.example.com}
+\setkomavar{signature}{\vspace{2cm}\\\scriptsize John Doe}
+
+\@setplength{sigbeforevskip}{1pt}
+
+%\setkomavar{fromlogo}{\includegraphics*[width=3cm]{logo}}
+\setkomavar{place}{Anytown}
+\setkomavar{backaddressseparator}{ $\cdot$ }
+
+% \firstfoot{\scriptsize\sffamily\color{mygray}
+%  \begin{center}
+%     \usekomavar{fromname}  $\cdot$
+%     \usekomavar{fromurl}
+%  \end{center}%
+% }
+
+\setkomavar{backaddress}{\makebox[0pt][l]{John Doe\\\usekomavar{fromaddress}}}
+
+\setkomafont{backaddress}{\sffamily\color{mygray}}
+\setkomafont{fromaddress}{\sffamily\scriptsize\color{mygray}}
+\setkomafont{fromname}{\small\sffamily\bfseries}
+\setkomafont{subject}{\sffamily\bfseries}
+
+\endinput
